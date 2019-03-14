@@ -1,0 +1,22 @@
+{
+  "name": "survey-genie",
+  "version": "1.0.0",
+  "description": "A simple survey creation and hosting platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robbiealixsantos/survey-genie.git"
+  },
+  "author": "Robbie Santos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robbiealixsantos/survey-genie/issues"
+  },
+  "homepage": "https://github.com/robbiealixsantos/survey-genie#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
