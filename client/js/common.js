@@ -17,24 +17,31 @@ function isLoggedIn() {
 }
 
 if (isLoggedIn()) {
-  const logout = '<a id="logout-link" href="#">Logout</a>';
-  appendElement("li", "#nav-items", logout);
+  try {
+    const logout = '<a id="logout-link" href="#">Logout</a>';
+    appendElement("li", "#nav-items", logout);
 
-  const account = '<a id="account-link" href="account.html">Account</a>';
-  appendElement("li", "#nav-items", account);
- 
-  removeElement("#login-link");
-  removeElement("#new-user-intro");
+    const account = '<a id="account-link" href="account.html">Account</a>';
+    appendElement("li", "#nav-items", account);
+  
+    removeElement("#login-link");
+    removeElement("#new-user-intro");
 
-  const test = 'Click <a href="account.html">here</a> to access or create your surveys.';
-  appendElement("p", "#intro-container", test);
+    const loggedInText = 'Click <a href="account.html">here</a> to access or create your surveys.';
+    appendElement("p", "#intro-container", loggedInText);
+  } catch (e) {
+
+  }
 }
 
-document.getElementById("logout-link").onclick = function(e) {
-  console.log("in the click");
-  logout();
-  document.location.replace("/index.html");
-};
+try {
+  document.getElementById("logout-link").onclick = function(e) {
+    logout();
+    document.location.replace("/index.html");
+  };
+} catch (e) {
+
+}
 
 function eraseCookieFromAllPaths() {
   var cookies = document.cookie.split("; ");

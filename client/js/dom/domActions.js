@@ -8,14 +8,22 @@ function hideElement(element) {
 
 function removeElement(element) {
     var elem = document.querySelector(element);
-    elem.parentNode.removeChild(elem);
-    //element.parentNode.removeChild(element);
+    try {
+        elem.parentNode.removeChild(elem);
+        element.parentNode.removeChild(element);
+    } catch (e) {
+
+    }  
 }
 
 function appendElement(elementType, parent, element) {
     var z = document.createElement(elementType);
     z.innerHTML = element;
-    document.querySelector(parent).appendChild(z);
+
+    try {
+        document.querySelector(parent).appendChild(z);
+    } catch (e) {
+    }
 }
 
 function setAttribute(element, attributeKey, attributeValue) {

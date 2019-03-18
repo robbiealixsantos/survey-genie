@@ -17,6 +17,16 @@ body {
     padding: 0;
   }
   
+  table, th, td {
+    border: 1px solid black;
+    margin-bottom: 15px;
+  }
+
+  th, td {
+    padding: 15px;
+    text-align: left;
+  }
+
   /* Header */
   header {
     background: #35424a;
