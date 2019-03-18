@@ -12,12 +12,10 @@ const SurveySchema = new Schema({
     required: true
   },
   description: {
-    type: String,
-    required: true
+    type: String
   },
   url: {
-    type: String,
-    required: true
+    type: String
   },
   timesTaken: {
     type: Number,

@@ -16,11 +16,28 @@ const Survey = require('../../models/Survey');
 // GET api/surveys/test
 // Tests surveys route
 // Public
-router.get('/surveys', (req, res) => res.json({ msg: 'Surveys Works' }));
+router.get('/test', (req, res) => res.json({ msg: 'Surveys Works' }));
+
+// GET api/surveys
+// Get surveys by user id
+// Private
+router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
+    Survey.find({ user: req.user.id })
+      .then(post => {
+        if (post) {
+          res.json(post);
+        } else {
+          res.status(404).json({ nosurveyfound: 'No survey found associated with that user ID' })
+        }
+      })
+      .catch(err =>
+        res.status(404).json({ nosurveyfound: 'No survey found associated with that ID' })
+      );
+});
 
 // POST api/surveys
 // Create survey
-// Public
+// Private
 router.post('/', passport.authenticate('jwt', { session: false }), (req, res) => {
   //const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -32,7 +49,7 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
   const newSurvey = new Survey({
     title: req.body.title,
     description: req.body.description,
-    timestaken: 0,
+    timesTaken: 0,
     user: req.user.id
   });
 

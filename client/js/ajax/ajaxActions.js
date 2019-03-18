@@ -43,7 +43,6 @@ function ajaxGet(ajaxURL, parameters, callback) {
     if (callback) {
         http3.onreadystatechange = function(){
             if (http3.readyState == 4 && http3.status == 200){
-                console.log(http3);
                 callback(http3.responseText);
             }
         }

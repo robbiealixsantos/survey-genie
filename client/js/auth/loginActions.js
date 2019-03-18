@@ -1,7 +1,12 @@
+//$(document).ready equivalent without jQuery
+document.addEventListener("DOMContentLoaded", function(event) { 
+    checkIsLoggedIn();
+});
+
 document.getElementById("submit").onclick = function(e) {
     e.preventDefault();
     login();
- };
+};
 
 function processLogin(response) {
     var obj = JSON.parse(response);
@@ -19,3 +24,11 @@ function login() {
         processLogin(response);
     });
 }
+
+function checkIsLoggedIn() {
+    if (isLoggedIn()) {
+        document.location.replace("/account.html");
+    }
+}
+
+

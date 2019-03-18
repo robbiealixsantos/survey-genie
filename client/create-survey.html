@@ -17,14 +17,30 @@
         <nav>
             <ul id="nav-items">
                 <li class="current"><a href="index.html">Home</a></li>
-                <li id="logout-link"><a href="#">Logout</a></li>
-                <li id="account-link"><a href="account.html">Account</a></li>
             </ul>
         </nav>
     </header>
-     
+    
+    <form>
+        <div class="container">
+            <h1>Create A Survey</h1>
+            <hr>
+
+            <label for="title"><b>Title</b></label>
+            <input type="text" placeholder="Title (required)" id="title" required>
+
+            <label for="description"><b>Description</b></label>
+            <input type="text" placeholder="Enter a short description" id="description">
+
+            <div class="clearfix">
+                <button id="submit-new-survey">Create New Survey</button>
+            </div>
+        </div>
+    </form>
+
     <script src="js/ajax/ajaxActions.js"></script>
     <script src="js/survey/createSurveyActions.js"></script>
+    <script src="js/dom/domActions.js"></script>
     <script src="js/common.js"></script>
 </body>
 
