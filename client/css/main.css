@@ -6,6 +6,10 @@ body {
 }
   
   /* Global */
+  h1 {
+    margin-bottom: -10px;
+  }
+
   .container {
     width: 80%;
     margin: auto;
@@ -23,7 +27,7 @@ body {
   }
 
   th, td {
-    padding: 15px;
+    padding: 10px;
     text-align: left;
   }
 

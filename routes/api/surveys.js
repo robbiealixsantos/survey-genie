@@ -10,7 +10,7 @@ const passport = require('passport');
 // example: const validateRegisterInput = require('../../validation/register');
 // TODO SURVEY VALIDATION
 
-// Load User model
+// Load Survey model
 const Survey = require('../../models/Survey');
 
 // GET api/surveys/test
@@ -31,8 +31,25 @@ router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => 
         }
       })
       .catch(err =>
-        res.status(404).json({ nosurveyfound: 'No survey found associated with that ID' })
+        res.status(404).json({ nosurveyfound: 'No survey found associated with that user ID' })
       );
+});
+
+// GET api/surveys/:id
+// Get survey by survey id
+// Private
+router.get('/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
+  Survey.find({ _id: req.params.id })
+    .then(post => {
+      if (post) {
+        res.json(post);
+      } else {
+        res.status(404).json({ nosurveyfound: 'No survey found associated with that ID' })
+      }
+    })
+    .catch(err =>
+      res.status(404).json({ nosurveyfound: 'No survey found associated with that ID' })
+    );
 });
 
 // POST api/surveys

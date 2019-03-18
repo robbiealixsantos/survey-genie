@@ -9,6 +9,8 @@ function getSurveysForUser() {
     
         if (Object.keys(obj).length) {
             removeElement("#no-surveys");
+            var info = 'Click on a survey title to add/edit questions';
+            appendElement('p', "#account-container", info);
 
             var surveysTable = '<tbody id="user-surveys"><th>Title</th><th>Description</th><th>Times Taken</th><th>Created Date</th><tbody>';
             appendElement('table', "#account-container", surveysTable);
@@ -16,8 +18,9 @@ function getSurveysForUser() {
             var addNewSurvey = 'Click <a href="create-survey.html">here</a> to create a new survey.</p>';
 
             for (var i = 0; i < obj.length; i++) {
-                var surveyInfo = '<td>' + obj[i].title + '</td><td>' + obj[i].description + '</td><td>' + obj[i].timesTaken + '</td><td>'
-                    + obj[i].createdDate + '</td>';
+                var createdDate = new Date(obj[i].createdDate).toDateString();
+                var surveyInfo = '<td><a href="/survey.html?id=' + obj[i]._id + '">' + obj[i].title + '</a></td><td>' + obj[i].description + '</td><td>' + obj[i].timesTaken + '</td><td>'
+                    + createdDate + '</td>';
                 appendElement('tr', "#user-surveys", surveyInfo);
             } 
 
