@@ -5,7 +5,7 @@ const passport = require('passport');
 const path = require('path');
 
 const users = require('./routes/api/users');
-//const surveys = require('./routes/api/surveys');
+const surveys = require('./routes/api/surveys');
 
 const app = express();
 
@@ -31,8 +31,10 @@ app.use(passport.initialize());
 require ('./config/passport')(passport);
 
 // Use Routes
+app.use('/', express.static('client'));
 app.use('/api/users', users);
-//app.use('/api/surveys', surveys);
+app.use('/api/surveys', surveys);
+
 
 // Server static assets if in production
 if (process.env.NODE_ENV === 'production') {
@@ -47,5 +49,3 @@ if (process.env.NODE_ENV === 'production') {
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
-
-  

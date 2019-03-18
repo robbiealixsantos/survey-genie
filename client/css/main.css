@@ -1,0 +1,124 @@
+body {
+    font: 15px/1.5 Arial, Helvetica,sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+  
+  /* Global */
+  .container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header */
+  header {
+    background: #35424a;
+    color: #ffffff;
+    padding-top: 30px;
+    min-height: 70px;
+    width: 100%;
+    border-bottom: #e8491d 3px solid;
+  }
+  
+  header a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+  
+  header li {
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+  }
+  
+  header #branding {
+    float:left;
+  }
+  
+  header #branding h1 {
+    margin: 0;
+    margin-left: 50px;
+  }
+  
+  header nav {
+    float: right;
+    margin-top: 10px;
+    margin-right: 40px;
+  }
+  
+  header .highlight, header .current a {
+    color: #e8491d;
+    font-weight: bold;
+  }
+  
+  header a:hover {
+    color: #cccccc;
+    font-weight: bold;
+  }
+  
+  /* Index */
+  #intro-container {
+    margin-top: 30px;
+  }
+
+  /* Login */
+/* Bordered form */
+form {
+    border: 3px solid lightgrey;
+    padding: 30px;
+    margin: 50px;
+  }
+  
+  /* Full-width inputs */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    background-color: #e8491d;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  /* Add a hover effect for buttons */
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  /* The "create-account" text */
+  span#create-account {
+    float: right;
+    padding-top: 16px;
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+    .cancelbtn {
+      width: 100%;
+    }
+  }
+
+  
